@@ -17,3 +17,7 @@ curl -u football:4a923980-baa8-4f59-9dfc-53be9943bfd0 'localhost:9000/teams?sort
 
 # get a specific team
 curl -u football:4a923980-baa8-4f59-9dfc-53be9943bfd0 'localhost:9000/teams/newcastle'
+
+# docker
+
+https://hub.docker.com/r/a1dutch/football-microservice/
