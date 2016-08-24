@@ -1,3 +1,15 @@
+# Tools & libraries used
+
+1) Spring Boot - most configuration is done automatically out of the box with boot wiring together all the common configuration classes you would have to create.
+
+2) Spring Libraries (JPA/Hibernate, Security, MVC) - Spring libraries integrate well with each other, they are commonly used, have good documentation (spring & community) and easy to use and understand.
+
+3) Embedded DB - Much easier to use the native filtering tools supplied by a database than using a flat file and writing sorting logic.
+
+4) JUnit / Hamcrest / TDD - Much easier to write unit tests up front, and let the code mostly be generated from the tests.  End up with better, more tested code, than going back and adding retrospective tests.
+
+5) SLF4J / Logback - The standard logging libraries, logback is an improvement of log4j v1 and slf4j ties together all available logging frameworks.  
+
 # Build & Run the application
 
 mvnw clean install
