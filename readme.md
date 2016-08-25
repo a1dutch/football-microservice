@@ -45,3 +45,7 @@ mvnw package docker:build
 You can pull the docker file from my docker hub, just change the ports above to match the one mapped by docker
 
 https://hub.docker.com/r/a1dutch/football-microservice/
+
+Alternatively you can run the command below with the correct mapped ports as above
+
+docker run -p 9000:8080 -t a1dutch/football-microservice
