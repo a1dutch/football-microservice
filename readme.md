@@ -48,7 +48,7 @@ curl -u football:4a923980-baa8-4f59-9dfc-53be9943bfd0 'localhost:9000/teams?sort
 curl -u football:4a923980-baa8-4f59-9dfc-53be9943bfd0 'localhost:9000/teams/newcastle'
 ```
 
-# docker
+# Docker
 
 This build creates a docker image as part of of the build process.
 
