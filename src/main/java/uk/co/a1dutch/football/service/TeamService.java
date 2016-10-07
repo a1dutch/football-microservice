@@ -25,11 +25,11 @@ public class TeamService {
 
 	public List<Team> findAll(String order, Direction direction) {
 		if (order == null) {
-			logger.info("finding users with natural ordering");
+			logger.info("finding teams with natural ordering");
 			return teamRepository.findAll();
 		}
 
-		logger.info("finding users with order: {}, direction: {}", order, direction == null ? null : direction.name());
+		logger.info("finding teams with order: {}, direction: {}", order, direction == null ? null : direction.name());
 		return teamRepository.findAll(new Sort(direction, order));
 	}
 
