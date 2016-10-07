@@ -52,7 +52,7 @@ curl -u football:4a923980-baa8-4f59-9dfc-53be9943bfd0 'localhost:9000/teams/newc
 
 This build creates a docker image as part of of the build process.
 
-You can run the micro service via docker (https://hub.docker.com/r/a1dutch/football-microservice), with the following command:
+You can run the micro service via [docker](https://hub.docker.com/r/a1dutch/football-microservice), with the following command:
 
 ```bash
 docker run -p 9000:8080 -t a1dutch/football-microservice
