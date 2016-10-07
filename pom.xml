@@ -57,12 +57,54 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>filter-dockerfiles</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <resources>
+                                <!-- # Filtered Resources -->
+                                <resource>
+                                    <directory>${project.basedir}/src/main/docker</directory>
+                                    <filtering>true</filtering>
+                                    <includes>
+                                        <include>Dockerfile</include>
+                                    </includes>
+                                </resource>
+                                <!-- # Unfiltered Resources -->
+                                <resource>
+                                    <directory>${project.basedir}/src/main/docker</directory>
+                                    <filtering>false</filtering>
+                                    <excludes>
+                                        <exclude>Dockerfile</exclude>
+                                    </excludes>
+                                </resource>
+                            </resources>
+                            <outputDirectory>${project.build.directory}/docker</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
-                <version>0.4.9</version>
+                <version>0.4.11</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>build</goal>
+                        </goals>
+                    </execution>
+                </executions>
                 <configuration>
                     <imageName>a1dutch/${project.artifactId}</imageName>
-                    <dockerDirectory>src/main/docker</dockerDirectory>
+                    <dockerDirectory>${project.build.directory}/docker</dockerDirectory>
                     <resources>
                         <resource>
                             <targetPath>/</targetPath>
